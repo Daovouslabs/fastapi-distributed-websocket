@@ -19,6 +19,18 @@ class Connection:
         self.accept: Callable[
             [str | None], Coroutine[Any, Any, None]
         ] = websocket.accept
+        self.receive_bytes: Callable[
+            [str], Coroutine[Any, Any, Any]
+        ] = websocket.receive_bytes
+        self.send_bytes: Callable[
+            [str], Coroutine[Any, Any, Any]
+        ] = websocket.send_bytes
+        self.receive_text: Callable[
+            [str], Coroutine[Any, Any, Any]
+        ] = websocket.receive_text
+        self.send_text: Callable[
+            [str], Coroutine[Any, Any, Any]
+        ] = websocket.send_text
         self.receive_json: Callable[
             [str], Coroutine[Any, Any, Any]
         ] = websocket.receive_json
